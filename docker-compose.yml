@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  web:
+    #build: .
+    image: node
+    volumes:
+      - .:/app
+      - ./server:/server
+    ports:
+      - "3000:5173"
+  server:
+    image: "amazoncorretto"
+    volumes:
+      - ./server:/server
+    ports:
+    #mc ports
+      - "25565:25565/udp"
+      - "25565:25565/tcp"
+    #rcon ports
+      - "25575:25575/udp"
+      - "25575:25575/tcp"
