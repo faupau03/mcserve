@@ -19,3 +19,6 @@ services:
     #rcon ports
       - "25575:25575/udp"
       - "25575:25575/tcp"
+    
+    working_dir: /server
+    command: java -Xmx${MAX_RAM:-1024M} -Xms${MIN_RAM:-1024M} -jar server.jar nogui
