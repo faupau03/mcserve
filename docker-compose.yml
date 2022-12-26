@@ -9,7 +9,9 @@ services:
     ports:
       - "3000:5173"
   server:
-    image: "amazoncorretto"
+    image: "amazoncorretto:19"
+    stdin_open: true
+    tty: true
     volumes:
       - ./server:/server
     ports:

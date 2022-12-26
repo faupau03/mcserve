@@ -1,0 +1,194 @@
+---- Minecraft Crash Report ----
+// I'm sorry, Dave.
+
+Time: 2022-12-15 14:13:44
+Description: Watching Server
+
+java.lang.Error: Watchdog
+	at bcc.an(SourceFile:394)
+	at bce.an(SourceFile:286)
+	at bol.an(SourceFile:244)
+	at bbn.k(SourceFile:469)
+	at bcc.k(SourceFile:2346)
+	at bce.k(SourceFile:353)
+	at agg.a(SourceFile:712)
+	at agg$$Lambda$4774/0x000000080193b698.accept(Unknown Source)
+	at cgx.a(SourceFile:466)
+	at agg.a(SourceFile:371)
+	at agg$$Lambda$4766/0x0000000801937a78.accept(Unknown Source)
+	at czi.a(SourceFile:54)
+	at agg.a(SourceFile:339)
+	at net.minecraft.server.MinecraftServer.b(SourceFile:875)
+	at afh.b(SourceFile:289)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:819)
+	at net.minecraft.server.MinecraftServer.v(SourceFile:665)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:257)
+	at net.minecraft.server.MinecraftServer$$Lambda$4319/0x00000008017db548.run(Unknown Source)
+	at java.base@19.0.1/java.lang.Thread.run(Thread.java:1589)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server Watchdog
+Stacktrace:
+	at bcc.an(SourceFile:394)
+	at bce.an(SourceFile:286)
+	at bol.an(SourceFile:244)
+	at bbn.k(SourceFile:469)
+	at bcc.k(SourceFile:2346)
+	at bce.k(SourceFile:353)
+	at agg.a(SourceFile:712)
+	at agg$$Lambda$4774/0x000000080193b698.accept(Unknown Source)
+	at cgx.a(SourceFile:466)
+	at agg.a(SourceFile:371)
+	at agg$$Lambda$4766/0x0000000801937a78.accept(Unknown Source)
+	at czi.a(SourceFile:54)
+	at agg.a(SourceFile:339)
+	at net.minecraft.server.MinecraftServer.b(SourceFile:875)
+	at afh.b(SourceFile:289)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:819)
+	at net.minecraft.server.MinecraftServer.v(SourceFile:665)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:257)
+
+-- Thread Dump --
+Details:
+	Threads: "Reference Handler" daemon prio=10 Id=8 RUNNABLE
+	at java.base@19.0.1/java.lang.ref.Reference.waitForReferencePendingList(Native Method)
+	at java.base@19.0.1/java.lang.ref.Reference.processPendingReferences(Reference.java:245)
+	at java.base@19.0.1/java.lang.ref.Reference$ReferenceHandler.run(Reference.java:207)
+
+
+"Finalizer" daemon prio=8 Id=9 WAITING on java.lang.ref.NativeReferenceQueue$Lock@1a79c759
+	at java.base@19.0.1/java.lang.Object.wait0(Native Method)
+	-  waiting on java.lang.ref.NativeReferenceQueue$Lock@1a79c759
+	at java.base@19.0.1/java.lang.Object.wait(Object.java:366)
+	at java.base@19.0.1/java.lang.Object.wait(Object.java:339)
+	at java.base@19.0.1/java.lang.ref.NativeReferenceQueue.await(NativeReferenceQueue.java:48)
+	at java.base@19.0.1/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:158)
+	at java.base@19.0.1/java.lang.ref.NativeReferenceQueue.remove(NativeReferenceQueue.java:89)
+	at java.base@19.0.1/java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:173)
+
+
+"Signal Dispatcher" daemon prio=9 Id=10 RUNNABLE
+
+
+"Notification Thread" daemon prio=9 Id=17 RUNNABLE
+
+
+"Common-Cleaner" daemon prio=8 Id=19 TIMED_WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@14be2a66
+	at java.base@19.0.1/jdk.internal.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@14be2a66
+	at java.base@19.0.1/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:269)
+	at java.base@19.0.1/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1759)
+	at java.base@19.0.1/java.lang.ref.ReferenceQueue.await(ReferenceQueue.java:71)
+	at java.base@19.0.1/java.lang.ref.ReferenceQueue.remove0(ReferenceQueue.java:143)
+	at java.base@19.0.1/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:218)
+	at java.base@19.0.1/jdk.internal.ref.CleanerImpl.run(CleanerImpl.java:140)
+	at java.base@19.0.1/java.lang.Thread.run(Thread.java:1589)
+	...
+
+
+"DestroyJavaVM" prio=5 Id=21 RUNNABLE
+
+
+"Timer hack thread" daemon prio=5 Id=30 TIMED_WAITING
+	at java.base@19.0.1/java.lang.Thread.sleep0(Native Method)
+	at java.base@19.0.1/java.lang.Thread.sleep(Thread.java:465)
+	at ad$9.run(SourceFile:849)
+
+
+"Server thread" prio=5 Id=34 RUNNABLE
+	at bcc.an(SourceFile:394)
+	at bce.an(SourceFile:286)
+	at bol.an(SourceFile:244)
+	at bbn.k(SourceFile:469)
+	at bcc.k(SourceFile:2346)
+	at bce.k(SourceFile:353)
+	at agg.a(SourceFile:712)
+	at agg$$Lambda$4774/0x000000080193b698.accept(Unknown Source)
+	...
+
+
+"Server console handler" daemon prio=5 Id=36 RUNNABLE (in native)
+	at java.base@19.0.1/java.io.FileInputStream.readBytes(Native Method)
+	at java.base@19.0.1/java.io.FileInputStream.read(FileInputStream.java:293)
+	at java.base@19.0.1/java.io.BufferedInputStream.read1(BufferedInputStream.java:308)
+	at java.base@19.0.1/java.io.BufferedInputStream.implRead(BufferedInputStream.java:382)
+	at java.base@19.0.1/java.io.BufferedInputStream.read(BufferedInputStream.java:361)
+	at java.base@19.0.1/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:333)
+	at java.base@19.0.1/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:376)
+	at java.base@19.0.1/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:219)
+	...
+
+	Number of locked synchronizers = 3
+	- java.util.concurrent.locks.ReentrantLock$NonfairSync@1081ac29
+	- java.util.concurrent.locks.ReentrantLock$NonfairSync@5583205d
+	- java.util.concurrent.locks.ReentrantLock$NonfairSync@19466bb
+
+
+"Netty Epoll Server IO #0" daemon prio=5 Id=37 RUNNABLE (in native)
+	at io.netty.channel.epoll.Native.epollWait(Native Method)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:209)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:202)
+	at io.netty.channel.epoll.EpollEventLoop.epollWaitNoTimerChange(EpollEventLoop.java:294)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:351)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:995)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.base@19.0.1/java.lang.Thread.run(Thread.java:1589)
+
+
+"Server Watchdog" daemon prio=5 Id=46 RUNNABLE
+	at java.management@19.0.1/sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at java.management@19.0.1/sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:541)
+	at java.management@19.0.1/sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:528)
+	at afk.run(SourceFile:47)
+	at java.base@19.0.1/java.lang.Thread.run(Thread.java:1589)
+
+
+
+Stacktrace:
+	at afk.run(SourceFile:63)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+
+-- Performance stats --
+Details:
+	Random tick rate: 3
+	Level stats: ResourceKey[minecraft:dimension / minecraft:overworld]: players: 0, entities: 236,236,157,529,529,0,0 [minecraft:item:38,minecraft:zombie:25,minecraft:chicken:24,minecraft:cow:22,minecraft:skeleton:20], block_entities: 346 [minecraft:sculk_sensor:235,minecraft:sculk_catalyst:68,minecraft:sculk_shrieker:26,minecraft:mob_spawner:16,minecraft:beehive:1], block_ticks: 18, fluid_ticks: 4, chunk_source: Chunks[S] W: 2209 E: 236,236,157,529,529,0,0,
+ResourceKey[minecraft:dimension / minecraft:the_end]: players: 0, entities: 0,0,0,0,0,0,0 [], block_entities: 0 [], block_ticks: 0, fluid_ticks: 0, chunk_source: Chunks[S] W: 0 E: 0,0,0,0,0,0,0,
+ResourceKey[minecraft:dimension / minecraft:the_nether]: players: 0, entities: 0,0,0,0,0,0,0 [], block_entities: 0 [], block_ticks: 0, fluid_ticks: 0, chunk_source: Chunks[S] W: 0 E: 0,0,0,0,0,0,0
+
+-- System Details --
+Details:
+	Minecraft Version: 1.19.2
+	Minecraft Version ID: 1.19.2
+	Operating System: Linux (amd64) version 6.0.9-300.fc37.x86_64
+	Java Version: 19.0.1, Amazon.com Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Amazon.com Inc.
+	Memory: 728430888 bytes (694 MiB) / 1073741824 bytes (1024 MiB) up to 1073741824 bytes (1024 MiB)
+	CPUs: 4
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Core(TM) i5-6400 CPU @ 2.70GHz
+	Identifier: Intel64 Family 6 Model 94 Stepping 3
+	Microarchitecture: Skylake (Client)
+	Frequency (GHz): 2.70
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 4
+	Graphics card #0 name: unknown
+	Graphics card #0 vendor: unknown
+	Graphics card #0 VRAM (MB): 0.00
+	Graphics card #0 deviceId: unknown
+	Graphics card #0 versionInfo: unknown
+	Virtual memory max (MB): 11752.77
+	Virtual memory used (MB): 12754.34
+	Swap memory total (MB): 7835.00
+	Swap memory used (MB): 5804.13
+	JVM Flags: 2 total; -Xmx1024M -Xms1024M
+	Server Running: true
+	Player Count: 0 / 20; []
+	Data Packs: vanilla
+	World Generation: Stable
+	Is Modded: Probably not. Server jar signature and brand is untouched
+	Type: Dedicated Server (map_server.txt)
